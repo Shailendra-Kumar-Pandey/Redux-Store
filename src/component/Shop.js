@@ -6,7 +6,8 @@ import {actionCreators} from '../state/index';
 
 const Shop = () => {
   const dispatch= useDispatch();
-  const action = bindActionCreators(actionCreators, dispatch)
+  // const action = bindActionCreators(actionCreators, dispatch);
+  const {depositMoney, withdrawMoney} = bindActionCreators(actionCreators, dispatch);
   return (
     <div className='container'>
 
@@ -16,9 +17,9 @@ const Shop = () => {
       Add to card
       <button className='btn btn-success mx-2'onClick={()=>{dispatch(actionCreators.withdrawtMoney(200))}}> - </button> */}
     
-      <button className='btn btn-success mx-2' onClick={()=>{action.depositMoney(200)}}> + </button>
+      <button className='btn btn-success mx-2' onClick={()=>{depositMoney(200)}}> + </button>
       Add to card
-      <button className='btn btn-success mx-2'onClick={()=>{action.withdrawtMoney(200)}}> - </button>
+      <button className='btn btn-success mx-2'onClick={()=>{withdrawMoney(200)}}> - </button>
     
     </div>
   )
